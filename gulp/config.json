@@ -1,0 +1,13 @@
+{
+  "meta": {
+    "banner": "build/banner.js"
+  },
+  "src": {
+    "files": ["app/components/pivottable/ua.pivottable.directive.js"]
+  },
+  "dest": {
+    "dir": "dist/",
+    "unminified": "angular-ua-pivot-table.js",
+    "minified": "angular-ua-pivot-table.min.js"
+  }
+}
