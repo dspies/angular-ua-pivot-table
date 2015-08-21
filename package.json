@@ -1,0 +1,32 @@
+{
+  "name": "angular-pivot-table",
+  "version": "0.0.1",
+  "description": "Angular Pivot Table Directive",
+  "repository": "https://github.com/dspies/angular-pivot-table",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "^1.3.0"
+  },
+  "devDependencies": {
+    "bower": "^1.3.1",
+    "browser-sync": "^2.8.2",
+    "gulp": "^3.9.0",
+    "gulp-karma": "^0.0.4",
+    "jasmine-core": "^2.3.4",
+    "karma": "~0.12",
+    "karma-chrome-launcher": "^0.1.12",
+    "karma-firefox-launcher": "^0.1.6",
+    "karma-jasmine": "^0.3.5",
+    "karma-junit-reporter": "^0.2.2",
+    "karma-phantomjs-launcher": "^0.1.4",
+    "require-dir": "^0.1.0",
+    "which-os": "0.0.2"
+  },
+  "scripts": {
+    "postinstall": "bower install",
+    "prestart": "npm install",
+    "start": "http-server app -a localhost -p 8000 -c-1",
+    "pretest": "npm install",
+    "test": "karma start karma.conf.js"
+  }
+}
