@@ -7,11 +7,25 @@
   <meta charset="utf-8">
   <title>Angular Pivot Table Directive Example App</title>
   <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="bower_components/pivottable/dist/pivot.css">
 </head>
 <body>
   <h1>Angular Pivot Table Directive Example App</h1>
 
+  <div ng-controller="PivotController as vm">
+    <pivot-table pivot-data="vm.testData"
+                 rows="vm.testRows"
+                 cols="vm.testCols"
+                 aggregator-name="vm.testAggregatorName"
+                 vals="vm.testVals"
+                 renderer-name="vm.testRendererName" ></pivot-table>
+  </div>
+
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/jquery-ui/jquery-ui.js"></script>
+  <script src="bower_components/pivottable/dist/pivot.js"></script>
   <script src="bower_components/angular/angular.js"></script>
+  <script src="components/pivottable/ua.pivottable.directive.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
