@@ -23,13 +23,13 @@
       .pipe(tag_version());
   }
 
-  gulp.task('bump:patch', function () {
+  gulp.task('bump:patch', ['release-build'], function () {
     return inc('patch');
   });
-  gulp.task('bump:minor', function () {
+  gulp.task('bump:minor', ['release-build'], function () {
     return inc('minor');
   });
-  gulp.task('bump:major', function () {
+  gulp.task('bump:major', ['release-build'], function () {
     return inc('major');
   });
 
@@ -39,13 +39,13 @@
     });
   });
 
-  gulp.task('push:tags', function () {
+  gulp.task('push:tags', ['push:branch'], function () {
     git.push('origin', '', {args: " --tags"}, function (err) {
       if (err) throw err;
     });
   });
 
-  gulp.task('commit-dist', function () {
+  gulp.task('commit-dist', ['minify'], function () {
     return gulp.src('./dist/*')
       .pipe(git.add())
       .pipe(git.commit('release created'));

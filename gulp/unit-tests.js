@@ -10,7 +10,7 @@
    * If e2e tests are added, it would be better to put the
    * files to run into the test and not use the files in karma.conf.js
    */
-  gulp.task('unit-test', function (done) {
+  gulp.task('unit-test', ['lint'], function (done) {
 
     karma.start({
       configFile: __dirname + '/../karma.conf.js',
@@ -21,7 +21,7 @@
   /**
    * Run ci test once and exit.
    */
-  gulp.task('ci-test', function (done) {
+  gulp.task('ci-test', ['lint'], function (done) {
 
     karma.start({
       configFile: __dirname + '/../karma.ci.conf.js'
@@ -31,7 +31,7 @@
   /**
    * Watch for file changes and re-run tests on each change
    */
-  gulp.task('tdd', function (done) {
+  gulp.task('tdd', ['lint'], function (done) {
     karma.start({
       configFile: __dirname + '/../karma.conf.js'
     }, done);

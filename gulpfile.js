@@ -14,7 +14,7 @@
    * Default test task
    * Calls all js unit tests
    */
-  gulp.task('test', ['lint','unit-test']);
+  gulp.task('test', ['unit-test']);
 
   /*
    * Serve web app
@@ -24,12 +24,12 @@
   /*
    * Build tasks for directive
    */
-  gulp.task('build', ['lint', 'test', 'minify']);
-  gulp.task('release-build', ['lint', 'test', 'minify', 'commit-dist']);
-  gulp.task('ci-build', ['lint', 'ci-test', 'minify']);
+  gulp.task('build', ['test', 'minify']);
+  gulp.task('release-build', ['test', 'minify', 'commit-dist']);
+  gulp.task('ci-build', ['ci-test', 'minify']);
 
-  gulp.task('release-major', ['release-build','bump:major', 'export']);
-  gulp.task('release-minor', ['release-build','bump:minor', 'export']);
-  gulp.task('release-patch', ['release-build','bump:patch', 'export']);
+  gulp.task('release-major', ['release-build', 'bump:major', 'export']);
+  gulp.task('release-minor', ['release-build', 'bump:minor', 'export']);
+  gulp.task('release-patch', ['release-build', 'bump:patch', 'export']);
 
 }());

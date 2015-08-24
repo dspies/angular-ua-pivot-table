@@ -13,14 +13,14 @@
 
   // Lint JS
   gulp.task('lint', function () {
-    gulp.src(config.src.files)
+    return gulp.src(config.src.files)
       .pipe(jshint())
       .pipe(jshint.reporter('default'));
   });
 
   // Concat & Minify JS
   gulp.task('minify', function () {
-    gulp.src(config.src.files)
+    return gulp.src(config.src.files)
       .pipe(addsrc.prepend(config.meta.banner))
       .pipe(concat(config.dest.unminified))
       .pipe(ngAnnotate({remove: true, add: true, single_quotes: true}))
