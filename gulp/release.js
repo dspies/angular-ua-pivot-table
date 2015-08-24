@@ -45,6 +45,11 @@
     });
   });
 
+  gulp.task('commit-dist', function () {
+    return gulp.src('dist/*')
+      .pipe(git.commit('dist created'));
+  });
+
   gulp.task('export', ['push:branch', 'push:tags']);
 
 }());

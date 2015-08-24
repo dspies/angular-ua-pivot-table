@@ -25,6 +25,7 @@
    * Build tasks for directive
    */
   gulp.task('build', ['lint', 'test', 'minify']);
+  gulp.task('release-build', ['lint', 'test', 'minify', 'commit-dist']);
   gulp.task('ci-build', ['lint', 'ci-test', 'minify']);
 
   gulp.task('release-major', ['build','bump:major', 'export']);
