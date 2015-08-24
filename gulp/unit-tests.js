@@ -19,6 +19,16 @@
   });
 
   /**
+   * Run ci test once and exit.
+   */
+  gulp.task('ci-test', function (done) {
+
+    karma.start({
+      configFile: __dirname + '/../karma.ci.conf.js'
+    }, done);
+  });
+
+  /**
    * Watch for file changes and re-run tests on each change
    */
   gulp.task('tdd', function (done) {

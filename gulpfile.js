@@ -22,8 +22,13 @@
   gulp.task('serve', ['browser-sync']);
 
   /*
-   * Build directive
+   * Build tasks for directive
    */
   gulp.task('build', ['lint', 'test', 'minify']);
+  gulp.task('ci-build', ['lint', 'ci-test', 'minify']);
+
+  gulp.task('release-major', ['build','bump:major', 'export']);
+  gulp.task('release-minor', ['build','bump:minor', 'export']);
+  gulp.task('release-patch', ['build','bump:patch', 'export']);
 
 }());
