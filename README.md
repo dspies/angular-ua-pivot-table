@@ -8,7 +8,10 @@ Angular Pivot Table (or Crosstab) Directive wrapping [Nicolas Kruchten's pivotta
 
 Bower
 ----
-Coming Soon
+
+```
+bower angular-ua-pivot-table
+```
 
 License
 ----
