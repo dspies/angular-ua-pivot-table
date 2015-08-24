@@ -28,8 +28,8 @@
   gulp.task('release-build', ['lint', 'test', 'minify', 'commit-dist']);
   gulp.task('ci-build', ['lint', 'ci-test', 'minify']);
 
-  gulp.task('release-major', ['build','bump:major', 'export']);
-  gulp.task('release-minor', ['build','bump:minor', 'export']);
-  gulp.task('release-patch', ['build','bump:patch', 'export']);
+  gulp.task('release-major', ['release-build','bump:major', 'export']);
+  gulp.task('release-minor', ['release-build','bump:minor', 'export']);
+  gulp.task('release-patch', ['release-build','bump:patch', 'export']);
 
 }());
